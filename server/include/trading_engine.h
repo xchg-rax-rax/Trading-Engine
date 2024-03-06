@@ -3,6 +3,8 @@
 #include <cstdint>
 #include <string>
 
+#include "crow.h"
+
 #include "trading_engine_server_config.h"
 
 using namespace trading_engine::server::config;
@@ -20,5 +22,8 @@ class TradingEngine {
    private:
     const std::string _server_ip;
     const uint16_t _server_port;
+    crow::SimpleApp _app;
+
+    void register_routes();
 };
 }  // namespace trading_engine::server

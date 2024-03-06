@@ -8,6 +8,8 @@ target_link_libraries( trading_engine_server
     PRIVATE
         utils
         nlohmann_json::nlohmann_json
+        Crow::Crow
+        Threads::Threads
 )
 
 target_include_directories( trading_engine_server

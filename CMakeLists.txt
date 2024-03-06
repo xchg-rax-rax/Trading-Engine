@@ -10,6 +10,10 @@ project(trading_engine)
 
 # Dependencies
 find_package(nlohmann_json 3.11.2 REQUIRED)
+find_package(Crow)
+set(THREADS_PREFER_PTHREAD_FLAG ON)
+find_package(Threads REQUIRED)
+
 
 # Libraries
 add_subdirectory(utils)
