@@ -1,0 +1,1 @@
+/usr/bin/clang++ CMakeFiles/trading_engine_server.dir/src/main.cpp.o CMakeFiles/trading_engine_server.dir/src/trading_engine.cpp.o CMakeFiles/trading_engine_server.dir/src/trading_engine_server_config.cpp.o -o trading_engine_server  ../utils/libutils.a 
