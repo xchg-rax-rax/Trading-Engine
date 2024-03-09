@@ -1,7 +1,7 @@
-add_library(utils STATIC src/logging.cpp)
+add_library(trading_engine_utils STATIC src/logging.cpp)
 
 
-target_include_directories(utils 
+target_include_directories(trading_engine_utils 
 PUBLIC
     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
     $<INSTALL_INTERFACE:include>

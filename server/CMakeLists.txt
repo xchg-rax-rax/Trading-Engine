@@ -6,7 +6,9 @@ add_executable( trading_engine_server
 
 target_link_libraries( trading_engine_server
     PRIVATE
-        utils
+        trading_engine_utils
+        trading_engine_messages
+        trading_engine_order_book
         nlohmann_json::nlohmann_json
         Crow::Crow
         Threads::Threads

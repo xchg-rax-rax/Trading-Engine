@@ -5,6 +5,8 @@ cmake_policy(SET CMP0135 NEW)
 set(CMAKE_C_COMPILER clang)
 set(CMAKE_CXX_COMPILER clang++)
 set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+
 
 project(trading_engine)
 
@@ -17,6 +19,9 @@ find_package(Threads REQUIRED)
 
 # Libraries
 add_subdirectory(utils)
+add_subdirectory(order_book)
+add_subdirectory(messages)
+
 
 # Binaries
 add_subdirectory(server)
