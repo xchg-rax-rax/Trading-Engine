@@ -1,6 +1,6 @@
 #include "order.h"
 
-namespace trading_engine::common::order {
+namespace trading_engine::messages::order {
 
 std::optional<Order> Order::from_json(json order_json) {
     if (!order_json.contains("uuid")) {

@@ -4,9 +4,14 @@
 #include <string>
 
 #include "nlohmann/json.hpp"
-using json = nlohmann::json;
 
-namespace trading_engine::common::order {
+#include "logging.h"
+
+using json = nlohmann::json;
+using namespace trading_engine::utils;
+
+
+namespace trading_engine::messages::order {
 
 class Order {
    public:
@@ -21,11 +26,18 @@ class Order {
     static std::optional<Order> from_json(json order_json);
     json to_json() const;
 
+    void debug_print() const {
+        std::string buy_or_sell = _is_buy ? "buy" : "sell";
+        std::string output = "Order: " + _uuid + " " + std::to_string(_quantity) +
+                            " " + std::to_string(_price) + " " + buy_or_sell;
+        logging::log_debug(output);
+    }
+
    private:
-    const std::string _uuid;
-    const int _quantity;
-    const double _price;
-    const bool _is_buy;
+    std::string _uuid;
+    int _quantity;
+    double _price;
+    bool _is_buy;
 };
 
 }  // namespace trading_engine::common::order
